@@ -3729,6 +3729,57 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 89ea9802ef9a8bb4e87655efb50f354a, type: 3}
+--- !u!1 &1313274513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1313274515}
+  - component: {fileID: 1313274514}
+  m_Layer: 0
+  m_Name: GorroSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1313274514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313274513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40bf9f8831c24df4aaf9d01d4a842e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gorroObject: {fileID: 3163354874142976274, guid: efda3edc391f99347af7e03152b5a766, type: 3}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  cantidadGorros: 10
+  gorrosCreados: []
+  indexUtilizados: 
+--- !u!4 &1313274515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313274513}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.198001, y: 5.7534947, z: -3.5332713}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1330428961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5355,7 +5406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3163354874143143218, guid: efda3edc391f99347af7e03152b5a766, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.343
+      value: -7.307
       objectReference: {fileID: 0}
     - target: {fileID: 3163354874143143218, guid: efda3edc391f99347af7e03152b5a766, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5404,3 +5455,4 @@ SceneRoots:
   - {fileID: 1423784664}
   - {fileID: 896147749}
   - {fileID: 2007908716}
+  - {fileID: 1313274515}
