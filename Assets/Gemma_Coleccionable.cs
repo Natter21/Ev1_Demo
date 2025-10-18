@@ -2,25 +2,23 @@ using UnityEngine;
 
 public class GemaColeccionable : MonoBehaviour
 {
-    public int valorGema = 1;  // El valor de la gema (puedes asignar puntos aquí)
+    public int valorGema = 1;
+    public AudioClip sonidoRecoleccion;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")) // Verifica si el objeto que entra es el jugador
-        {
-            // Obtén el script del jugador (ControladorPlayer)
-            ControladorPlayer controladorPlayer = other.gameObject.GetComponent<ControladorPlayer>();
+        if (!other.CompareTag("Player")) return;
 
-            if (controladorPlayer != null)
-            {
-                controladorPlayer.RecogerGema(valorGema);  // Llamamos al método para agregar puntos
-            }
+        // Suma puntos
+        var player = other.GetComponent<ControladorPlayer>();
+        if (player) player.RecogerGema(valorGema);
 
-            // Desactiva el collider para que no pueda ser recogida nuevamente
-            GetComponent<Collider>().enabled = false;
+        // Reproduce el sonido aunque destruyas la gema
+        if (sonidoRecoleccion != null)
+            AudioSource.PlayClipAtPoint(sonidoRecoleccion, transform.position, 1f);
 
-            // Destruye la gema después de ser recolectada
-            Destroy(gameObject);
-        }
+        // Desaparece la gema
+        Destroy(gameObject);
     }
 }
+
