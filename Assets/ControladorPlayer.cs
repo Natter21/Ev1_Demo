@@ -1,26 +1,27 @@
 using UnityEngine;
-using TMPro;  // Importa TextMeshPro si usas ese
+using TMPro;  // Importa TextMeshPro para el manejo de texto en la UI
 
 public class ControladorPlayer : MonoBehaviour
 {
-    public int contadorGorros = 0;  // Contador de gorros
-    public TextMeshProUGUI contadorTexto;  // Referencia al texto de la UI
+    public int puntos = 0;  // Variable para almacenar los puntos obtenidos por las gemas
+    public TextMeshProUGUI contadorPuntosTexto;  // Referencia al texto en la UI donde se mostrarán los puntos
 
     void Start()
     {
-        // Inicializa el texto al empezar (puedes dejarlo vacío si lo haces desde el Inspector)
+        // Inicializa el texto de los puntos cuando inicie el juego
         ActualizarContadorTexto();
     }
 
-    // Llamado por el script del gorro cuando se recoge un gorro
-    public void RecogerGorro()
+    // Este método será llamado desde el script de las gemas cuando se recoja una
+    public void RecogerGema(int valorGema)
     {
-        contadorGorros++;  // Aumenta el contador de gorros
-        ActualizarContadorTexto();  // Actualiza el texto de la UI
+        puntos += valorGema;  // Aumenta los puntos por la gema recolectada
+        ActualizarContadorTexto();  // Actualiza el texto en la UI
     }
 
+    // Actualiza el texto de los puntos en la pantalla
     void ActualizarContadorTexto()
     {
-        contadorTexto.text = "Gorros: " + contadorGorros.ToString();  // Muestra el contador
+        contadorPuntosTexto.text = "Puntos: " + puntos.ToString();  // Muestra los puntos actuales
     }
 }
